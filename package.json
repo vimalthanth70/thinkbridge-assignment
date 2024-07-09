@@ -6,8 +6,8 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "web-build":"cd ./apps/web && npm run build",
-    "server-build":"cd ./apps/server && npm run build",
+    "web-build": "cd ./apps/web && npm run build",
+    "server-build": "cd ./apps/server && npm run build"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
