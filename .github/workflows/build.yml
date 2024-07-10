@@ -1,4 +1,4 @@
-name: Build and Deploy Next.js App
+name: Build Pipeline
 
 on:
   push:
