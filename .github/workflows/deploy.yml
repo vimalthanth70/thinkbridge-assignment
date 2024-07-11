@@ -40,4 +40,4 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           sudo docker pull vimalthanth70/thinkbridge:latest
-          sudo docker run -p 4173:4173 -e VITE_APP_BASE_URL=${{ secrets.VITE_APP_BASE_URL }} -p 3000:3000 -d vimalthanth70/thinkbridge:latest
+          sudo docker run -p 3001:3001 -e VITE_APP_BASE_URL=${{ secrets.VITE_APP_BASE_URL }} -p 3000:3000 -d vimalthanth70/thinkbridge:latest
