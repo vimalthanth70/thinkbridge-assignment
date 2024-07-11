@@ -5,7 +5,7 @@ import {RestaurantType} from '@repo/validations'
 export const fetchRestaurants:any = createAsyncThunk('fetchAllProducts', async ({query}:{query:string}, thunkAPI) => {
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/restaurants?search=${query}`,{
+      const response = await fetch(`http://server-thinkbridge.devxvimal.online/api/v1/restaurants?search=${query}`,{
         method:"GET",
         headers:{
           "Content-Type":"Application/json"
@@ -21,7 +21,7 @@ export const fetchRestaurants:any = createAsyncThunk('fetchAllProducts', async (
 export const addRestaurants:any = createAsyncThunk('addRestaurants', async (restaurantData:RestaurantType, thunkAPI) => {
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/restaurants`,{
+      const response = await fetch(`http://server-thinkbridge.devxvimal.online/api/v1/restaurants`,{
         method:"POST",
         headers:{
           "Content-Type":"Application/json"
@@ -46,7 +46,7 @@ export const addRestaurants:any = createAsyncThunk('addRestaurants', async (rest
 export const editRestaurant:any = createAsyncThunk('editRestaurant', async (restaurantData:RestaurantWithId, thunkAPI) => {
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/restaurants`,{
+      const response = await fetch(`http://server-thinkbridge.devxvimal.online/api/v1/restaurants`,{
         method:"PUT",
         headers:{
           "Content-Type":"Application/json"
@@ -71,7 +71,7 @@ export const editRestaurant:any = createAsyncThunk('editRestaurant', async (rest
 export const deleteRestaurant:any = createAsyncThunk('deleteRestaurant', async (id:string, thunkAPI) => {
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL}/restaurant/${id}`,{
+      const response = await fetch(`http://server-thinkbridge.devxvimal.online/api/v1/restaurant/${id}`,{
         method:"DELETE",
         headers:{
           "Content-Type":"Application/json"
