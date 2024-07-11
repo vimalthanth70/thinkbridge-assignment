@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {RestaurantType} from '@repo/validations'
 
-// const fetchRestaurants = createAsyncThunk()
+
+// all url's should be inside .env file, but for simplicity i have used variables directly
 export const fetchRestaurants:any = createAsyncThunk('fetchAllProducts', async ({query}:{query:string}, thunkAPI) => {
 
     try {
