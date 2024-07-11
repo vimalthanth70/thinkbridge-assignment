@@ -10,6 +10,7 @@ import { Button } from "../../components/ui/button";
 import { useToast } from "../../components/ui/use-toast";
 import { Toaster } from "../../components/ui/toaster";
 import { Input } from "../../components/ui/input";
+import { ErrorBoundary } from "../common/ErrorBoundry";
 type IdType = {id:string}
 
     export type RestaurantWithId = RestaurantType & IdType
@@ -52,12 +53,15 @@ export default function Dashbord() {
         <Button onClick={()=>dispatch(toggleModal(true))}>Add Restaurant</Button>
       </div>
         <div className="flex w-[100%] justify-start right-3">
-          <div className="flex flex-wrap justify-center gap-5">
-            {allRestaurants.restaurants.length>0 && allRestaurants.restaurants.map((restuarant:RestaurantWithId)=>{
-                return <RestaurentCard key={restuarant.id} cardDetail={restuarant} /> 
-            })}
+          <ErrorBoundary>
+            <div className="flex flex-wrap justify-center gap-5">
+              {allRestaurants.restaurants.length>0 && allRestaurants.restaurants.map((restuarant:RestaurantWithId)=>{
+                  return <RestaurentCard key={restuarant.id} cardDetail={restuarant} /> 
+              })}
 
-          </div>
+            </div>
+
+          </ErrorBoundary>
 
         </div>
         {allRestaurants.restaurants.length==0 && <p className="text-center font-bold text-[20px]">No Restaurant found!</p>}

@@ -1,0 +1,17 @@
+FROM node:20.12.0-alpine3.19
+
+WORKDIR /user/src/apps
+
+COPY package.json package-lock.json turbo.json ./
+
+COPY apps ./apps
+COPY packages ./packages
+
+RUN npm install
+
+RUN npm run validation-build 
+
+RUN npm run web-build
+RUN npm run server-build
+
+CMD [ "npm","run","start:all" ]
