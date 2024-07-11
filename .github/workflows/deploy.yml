@@ -41,5 +41,5 @@ jobs:
         script: |
           sudo docker pull vimalthanth70/thinkbridge:latest
           sudo docker stop thinkbridge || true
-          sudo docker rmi thinkbridge || true
+          sudo docker rm thinkbridge || true
           sudo docker run -d --name thinkbridge -p 4173:4173 -e VITE_APP_BASE_URL=${{ secrets.VITE_APP_BASE_URL }} -p 3000:3000 vimalthanth70/thinkbridge:latest
