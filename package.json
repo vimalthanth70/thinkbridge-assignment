@@ -9,7 +9,9 @@
     "web-build": "cd ./apps/web && npm run build",
     "server-build": "cd ./apps/server && npm run build",
     "validation-build":"cd ./packages/validations && npm run build",
-    "web-start":"cd ./apps/web && npm run start"
+    "web-start":"cd ./apps/web && npm run preview",
+    "server-start":"cd ./apps/server && npm run start",
+    "start:all": "concurrently \"npm run web-start\" \"npm run server-start\""
   },
   "devDependencies": {
     "prettier": "^3.2.5",
