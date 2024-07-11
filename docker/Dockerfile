@@ -14,4 +14,7 @@ RUN npm run validation-build
 RUN npm run web-build
 RUN npm run server-build
 
+EXPOSE 3001
+EXPOSE 3000
+
 CMD [ "npm","run","start:all" ]
